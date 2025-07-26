@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Can I Be Your Boyfriend?</title>
+  <style>
+    body {
+      background-color: #ffeef2;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      background-color: #ffb6c1;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #ff91a4;
+    }
+
+    .no-shake {
+      animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-8px); }
+      50% { transform: translateX(8px); }
+      75% { transform: translateX(-8px); }
+      100% { transform: translateX(0); }
+    }
+
+    #bear {
+      margin-top: 30px;
+      display: none;
+    }
+
+    #bear img {
+      width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Can I be your boyfriend? 💖</h1>
+  <div class="buttons">
+    <button id="yesBtn">Yes 😊</button>
+    <button id="noBtn">No 🙈</button>
+  </div>
+  <div id="bear">
+    <img src="https://s1.ezgif.com/tmp/ezgif-1be677c58fd17e.gif" alt="Happy bear gif" />
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const bear = document.getElementById("bear");
+
+    yesBtn.addEventListener("click", () => {
+      bear.style.display = "block";
+    });
+
+    noBtn.addEventListener("click", () => {
+      noBtn.classList.add("no-shake");
+      setTimeout(() => noBtn.classList.remove("no-shake"), 300);
+    });
+  </script>
+</body>
+</html>
